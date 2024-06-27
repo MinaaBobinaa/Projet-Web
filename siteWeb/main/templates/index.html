@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Rental Website</title>
+    {% load static %}
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'main/css/style.css' %}">
+</head>
+<body >
+    <header class="py-3 header-custom fixed-top">
+        <div class="container-fluid container-custom d-flex flex-wrap justify-content-between align-items-center">
+            <div class="d-flex align-items-center">
+                <img src="{% static 'main/images/logo.png' %}" alt="Logo" class="mr-2" style="height: 70px;">
+                <h1 class="mb-0 header-title">Comfy Home</h1>
+            </div>
+            <nav class="navbar navbar-expand-md navbar-light ml-auto">
+                <button class="navbar-toggler d-md-none" type="button" data-toggle="modal" data-target="#navbarModal" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse d-none d-md-flex" id="navbarNav">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">ACHETER</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">LOUER</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">VENDRE</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">CONNEXION</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </header>
+    
+    <!-- Modal -->
+    <div class="modal fade modal-fullscreen" id="navbarModal" tabindex="-1" aria-labelledby="navbarModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="navbarModalLabel">Menu</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">ACHETER</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">LOUER</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">VENDRE</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">CONNEXION</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<div class="container mt-4">
+    <section class="row justify-content-center mb-4">
+        <div class="col-12">
+            <form class="form-inline">
+                <input class="form-control mr-sm-2 w-75" type="search" placeholder="Chercher par ville" aria-label="Search">
+                <button class="btn btn-outline-danger my-2 my-sm-0" type="submit">Chercher</button>
+            </form>
+        </div>
+    </section>
+    <section class="row">
+        <!-- espace vide pour separer cartes et search -->
+    </section>
+</div>
+
+
+<div class=" container-fluid mt-4 ">
+    <section class="row">
+        <article class="col-12 col-md-6 col-lg-4 mb-4">
+            <div class="card h-100">
+                <img src="{% static 'main/images/house1.jpg' %}" class="card-img-top" alt="House 1">
+                <div class="card-body">
+                    <h5 class="card-title">Beautiful Family House</h5>
+                    <p class="card-text">Location: New York City</p>
+                    <p class="card-text">Price: $4500/month</p>
+                </div>
+            </div>
+        </article>
+        <article class="col-12 col-md-6 col-lg-4 mb-4">
+            <div class="card h-100">
+                <img src="{% static 'main/images/house2.jpg' %}" class="card-img-top" alt="House 2">
+                <div class="card-body">
+                    <h5 class="card-title">Modern Apartment</h5>
+                    <p class="card-text">Location: Los Angeles</p>
+                    <p class="card-text">Price: $2400/month</p>
+                </div>
+            </div>
+        </article>
+        <article class="col-12 col-md-6 col-lg-4 mb-4">
+            <div class="card h-100">
+                <img src="{% static 'main/images/house3.jpg' %}" class="card-img-top" alt="House 3">
+                <div class="card-body">
+                    <h5 class="card-title">Cozy Cottage</h5>
+                    <p class="card-text">Location: Chicago</p>
+                    <p class="card-text">Price: $2800/month</p>
+                </div>
+            </div>
+        </article>
+        <article class="col-12 col-md-6 col-lg-4 mb-4">
+            <div class="card h-100">
+                <img src="{% static 'main/images/house4.jpg' %}" class="card-img-top" alt="House 4">
+                <div class="card-body">
+                    <h5 class="card-title">Loft Apartment</h5>
+                    <p class="card-text">Location: Montreal</p>
+                    <p class="card-text">Price: $2600/month</p>
+                </div>
+            </div>
+        </article>
+        <article class="col-12 col-md-6 col-lg-4 mb-4">
+            <div class="card h-100">
+                <img src="{% static 'main/images/house5.jpg' %}" class="card-img-top" alt="House 5">
+                <div class="card-body">
+                    <h5 class="card-title">House by the Lake</h5>
+                    <p class="card-text">Location: Vancouver</p>
+                    <p class="card-text">Price: $8500/month</p>
+                </div>
+            </div>
+        </article>
+        <article class="col-12 col-md-6 col-lg-4 mb-4">
+            <div class="card h-100">
+                <img src="{% static 'main/images/house6.jpg' %}" class="card-img-top" alt="House 6">
+                <div class="card-body">
+                    <h5 class="card-title">City Apartment</h5>
+                    <p class="card-text">Location: New York City</p>
+                    <p class="card-text">Price: $3500/month</p>
+                </div>
+            </div>
+        </article>
+    </section>
+
+</div>
+
+<div class=" container-fluid mt-4 ">
+    <section class="mt-4">
+        <h2>Contact Us</h2>
+        <form action="/submit-form" method="post">
+            <div class="form-group">
+                <label for="name">Name:</label>
+                <input type="text" class="form-control" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" class="form-control" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="message">Message:</label>
+                <textarea class="form-control" id="message" name="message" rows="5" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-outline-success">Submit</button>
+        </form>
+    </section>
+</div>
+
+<div class=" container-fluid mt-4 ">
+    <section class="row">
+        <!-- espace vide fin de page -->
+    </section>
+</div>
+
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</body>
+</html>
