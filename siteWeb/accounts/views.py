@@ -13,8 +13,8 @@ def loginView(request):
         user = authenticate(request, username=username, password=password)
         if user is not None:
             login(request,  user)
-            if request.GET.get('next'):
-                return HttpResponseRedirect(reverse(main.views.house_list))
+            # if request.GET.get('next'):
+            return HttpResponseRedirect(reverse(main.views.house_list))
         else:
             context={
                 "username":username,
