@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login</title>
+</head>
+<body>
+    <h1>Login</h1>
+    <form action="" method="POST" class="form">
+        {% csrf_token %}
+        <p style="color:red">{{ username }}  {{ errorMessage }}</p>
+        <p>
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" placeholder="Enter youe username" required>
+        </p>
+        <p>
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" placeholder="Enter youe password" required>
+        </p>
+        <button type="submit">Login</button>
+    </form>
+</body>
+</html>
