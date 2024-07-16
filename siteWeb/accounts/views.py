@@ -1,6 +1,8 @@
 from django.contrib.auth import authenticate, login, logout
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.http import HttpResponseRedirect
+from .forms import ProfileRegisterForm, ProfileModelForm
+from .models import ProfileModel
 import main
 import main.views
 from django.urls import reverse
@@ -30,7 +32,19 @@ def logoutView(request):
     return HttpResponseRedirect(reverse(main.views.index))
 
 
+def profileRegisterView(request):
+    if request.method == "POST":
+        user_form = ProfileRegisterForm(request.POST)
+        if user_form.is_valid():
+            user = user_form.save()
+            profile = ProfileModel(user=user)
+            profile.save()
+            return render(request, "accounts/registration_success.html") 
+    else:
+        user_form = ProfileRegisterForm()
+    return render(request, "accounts/profileRegister.html", {
+        'user_form': user_form
+    })
 
-
-    
-            
+def registration_success(request):
+    return render(request, "accounts/registration_success.html")

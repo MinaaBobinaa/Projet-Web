@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Registration Form</title>
+</head>
+<body>
+    <h2>Registration Form</h2>
+    {% if success_message %}
+        <h1>{{ success_message }}</h1>
+    {% endif %}
+    <form action="{% url 'submit_registration' %}" method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ user_form.as_p }}
+        {{ profile_form.as_p }}
+        <input type="submit" value="Register">
+    </form>
+</body>
+</html>
+
